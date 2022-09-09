@@ -1,0 +1,3 @@
+My blind attempt to recreate the LeetCode example produced essentially the LeetCode example, but paraphrased a bit differently. My blind attempt inverted the boolean logic checking whether the node's value is acceptable, which changes nothing in practical terms.
+
+Actually, my boolean logic is slightly syntactically cleaner than the LeetCode example's boolean logic, so I consider it an improvement.

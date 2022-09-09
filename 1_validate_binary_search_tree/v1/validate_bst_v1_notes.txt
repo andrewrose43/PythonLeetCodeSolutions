@@ -1,0 +1,28 @@
+This first stab at it is woefully verbose compared to the LeetCode answer.
+
+Notes from the LeetCode answer:
+-math.inf is a handy constant.
+-Use their slicker base-case syntax -
+    if not root:
+        return True
+-Their logic is so much simpler! My error was trying to process the node's children at all instead of restricting my answer to the node itself.
+
+Next step: attempt to blindly recreate the LeetCode answer.
+
+-------
+
+Provided starter code, tweaked slightly for my use outside the LeetCode environment:
+
+from typing import Optional
+
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
