@@ -1,0 +1,3 @@
+OK, this is functional. Now time to consult, and attempt to recreate blind, the even more advanced method proposed by LeetCode.
+
+...Wow. That more advanced method is actually astonishingly simple. Very clever.

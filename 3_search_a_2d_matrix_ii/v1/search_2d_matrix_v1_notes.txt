@@ -1,0 +1,18 @@
+
+This first attempt is far from efficient code. Here's my plan for iteratively improving it:
+(note from the future: this plan changed later)
+v1. [already written]
+v2. blindly attempt the more advanced solution described at the bottom of https://leetcode.com/explore/learn/card/recursion-ii/470/divide-and-conquer/2869/ - I read this yesterday and will try to recreate it from yesterday's memory without rereading
+v3. look again at the more advanced solution for reference; polish up v3
+v4. see the even more advanced method at the bottom of https://leetcode.com/problems/search-a-2d-matrix-ii/solution/; close window and recreate blindly
+v5. read the even more advanced method again for reference; polish up v5
+
+
+---------
+
+Provided starter code, with the List import added for use outside the LeetCode environment:
+
+from typing import List
+
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:

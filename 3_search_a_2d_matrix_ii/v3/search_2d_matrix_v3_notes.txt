@@ -1,0 +1,3 @@
+OK. This turned out fine; not much to say about it.
+
+For v4, I'll recreate this blind with binary search.

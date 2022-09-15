@@ -1,0 +1,28 @@
+After a lot of time spent fixing bugs, I decided to leave v2 nonfunctional when the input ""[[5], [6]], 6" broke it yet again. I KNOW IT'S BROKEN. I'm leaving it this way because at this point, there clearly must be a far cleaner way to write this solution than the rather verbose way I have written it. I could get this version to work, but that would take time I don't have, and the fix could make it even more verbose. Better to start over.
+
+Let's see what LeetCode wrote, and I'll learn from that and rewrite it blind for v3.
+
+-----
+
+Notes from LeetCode's solution:
+
+-They didn't implement a binsearch method. Instead, they simply traverse the middle column. They actually mention that binsearch would be an improvement in their notes under the code! So I'll try implementing their solution blind, and then, for v4, I'll do it again with binsearch added.
+-That binsearch took a ton of my time. In an interview, I should probably hand-wave that away and say "let's assume there's a binsearch method to call" and then only actually write a binsearch method if asked to do so.
+-A key insight: better base cases, communicated in clearer terms.
+    -instead of "lo_row" and company, they use "left, up, right, down" as their boundary variables
+    -instead of "not found", their comment reads "this submatrix has no height or no width", which is clearer
+    -they drop an entire matrix if the target is smaller than the smallest or larger than the largest value in the submatrix! Now THAT is efficient.
+-Their solution swaps the roles of rows and columns in v2, which is no better or worse. I'll write out the solution in the v2 orientation instead of LeetCode's, just to force me to think about what I'm coding.
+-Their solution only returns true when the column traversal stumbles upon the target. v2 did too, but in a more convoluted way.
+
+-----
+
+OK. Time to try writing this blind again.
+
+New version of plan:
+v1. [already written]
+v2. [already written]
+v3. Blindly recreate LeetCode's more-advanced solution WITHOUT binsearch
+v4. " " " " WITH binsearch
+v5. see the even more advanced method at the bottom of https://leetcode.com/problems/search-a-2d-matrix-ii/solution/; close window and recreate blindly
+v6. read the even more advanced method again for reference; polish up v5
