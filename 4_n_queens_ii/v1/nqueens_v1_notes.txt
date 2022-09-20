@@ -1,0 +1,17 @@
+My first attempt, written blindly.
+
+Now to look at LeetCode's solutions & notes for ideas to improve upon this.
+
+Notes from LeetCode's solutions & notes:
+-They have a way more efficient means of tracking column occupancy: each time a column is occupied, add that column's index to a set.
+-They use a more advanced version of the same trick to track diagonal (downward slope) and anti-diagonal (upward slope) occupancy.
+    -To track diagonal occupancy, make a set where the values are the DIFFERENCE between the row and column.
+    -To track anti-diagonal occupancy, make a set where the values are the SUM of the row and column.
+-They pass the entire board state into their recursive function, whereas my v1 saves the board state as an object field. I'll try this for v2, then perhaps revert to the object-field approach in v3 just to force myself to practice adapting the solution instead of copying it by rote.
+
+-----
+
+Provided starter code:
+
+class Solution:
+    def totalNQueens(self, n: int) -> int:

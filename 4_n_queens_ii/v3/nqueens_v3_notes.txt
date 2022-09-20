@@ -1,0 +1,7 @@
+This is v2 with the added improvements from nqueens_v2_notes.txt.
+
+Notes from looking again at LeetCode's solution:
+-I use the opposite boolean protocol for whether to add a queen; either works. Whatever.
+-It's otherwise exactly the same as what I wrote here.
+
+I'll rewrite this blindly once more for practice, but there's no more improvement to be made, so this is the last version I'll push to GitHub.

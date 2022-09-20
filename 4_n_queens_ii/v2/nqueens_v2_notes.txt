@@ -1,0 +1,9 @@
+Wrote this blind after previously looking at LeetCode's nice and tidy solution. Now, notes from looking at their solution again, after writing this:
+
+-Their solution does a tidier, one-line job of setting up the recursive function, but mine uses comments to make it more readable. Either layout is fine. I'll try theirs in v3.
+-Their recursive function has 4 parameters instead of my 6.
+    -They remove the "n" parameter by making the recursive function an inner function so it can access all of the outer function's parameters. Nice trick to remember.
+    -Instead of a "count" parameter, they return a constant that's created inside the inner function, and they add to it the value returned by each of its children.
+-Their solution avoids a few minor redundant calculations by caching row-col and row+col.
+
+Next: v3. I'll blindly implement those notes.
