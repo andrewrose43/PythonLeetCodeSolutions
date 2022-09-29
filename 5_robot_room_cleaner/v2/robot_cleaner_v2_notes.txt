@@ -1,0 +1,20 @@
+This took ages to write and debug, partly because I'm unable to use PyCharm to debug my solution since it relies on LeetCode's black-box code. But eventually, this finally worked.
+
+Now to look at LeetCode's undoubtedly-far-superior solution and figure out how to make mine better.
+
+-----
+
+Notes from LeetCode's solution:
+
+Improvements compared to my code:
+-TODO add a note about me using tuples instead of lists?
+-The LeetCode solution avoids having to write and call my _my_right() and _my_left() functions, as well as some associated assignments to the "direction" variable. They do this by tracking a "new_d" variable which tracks the robot's direction relative to the direction passed to the backtrack function.
+
+Neutral/tradeoff-involving differences compared to my code:
+-Instead of my _adj_cell() function, which uses a map and a lambda function to calculate the coordinates of the new cell, the LeetCode solution uses tuple index access and basic addition. Their version is less modular, but more concise. I'll stick with my version for v3.
+
+Ways in which my code is better:
+-After clearing the cells adjacent to the first cell, my implementation checks only three adjacent cells instead of four, since one of the four is the cell the robot came from.
+-My implementation avoids the robot turning back and forth uselessly every time it backtracks. LeetCode's go_back() method is wasteful, especially in the case of a real-life robot which turns in real time instead of at the speed of this program running.
+-I use a for-each loop instead of a for-in-range loop, which is faster.
+

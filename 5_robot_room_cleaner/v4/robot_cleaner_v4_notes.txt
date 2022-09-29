@@ -1,0 +1,7 @@
+The plan was for v4 to start as a copy of v2, and then bits of it would be replaced with bits of v3 until v3's bug was isolated.
+
+That led nowhere helpful. The bug was fixed when I made the improvement noted in the v3 notes: this version only tracks cells it has visited. This means fewer redundant if checks and reduces the order of the algorithm's space complexity from O(N+M) to O(N-M), where N is the number of obstacle-free cells and M is the number of obstacle-filled cells. However, it means that in real life, the robot would waste a bunch of time crashing into obstacles. I have no idea why this change fixed the bug. It doesn't make sense; perhaps LeetCode's extremely large test case causes an overflow or other stress-related issue in v3.
+
+Anyway, the end result is more verbose than the official LeetCode solution, but much faster (for reasons noted in previous notes files) and just as space-efficient.
+
+One last minor syntactic improvement over LeetCode's solution: I use a tuple, not a list, for the "directions" tuple, which should rightfully be immutable.

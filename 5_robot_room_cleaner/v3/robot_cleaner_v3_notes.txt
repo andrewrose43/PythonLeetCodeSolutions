@@ -1,0 +1,7 @@
+This solution passes 28 of 29 of LeetCode's test cases. On the one failed case, it neglects to clean a single cell in an enormous room.
+
+Since this solution interacts with LeetCode's "robot" implementation, I can't run it on my own to figure out the issue. To figure it out, I'm going to start with a copy of v2, then gradually replace bits of it with bits of v3 until I find the line that breaks the code.
+
+Other notes:
+-Caching (0, 1, 2) in the "arr3" variable should make this solution faster than v2, once I've ironed out this bug.
+-In addition to fixing this bug, an improvement to make for v4 is to store only visited cells, not both visited cells and obstacles. This would reduce the space complexity, and LeetCode's solution does this, so it's obviously possible.

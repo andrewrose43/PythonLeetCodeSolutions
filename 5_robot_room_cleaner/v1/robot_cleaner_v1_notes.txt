@@ -1,0 +1,84 @@
+This one stumped me. It occurred to me I could simply build an expanding 2D list representing the explored map, but that struck me as 1) extremely laborious, and 2) unlikely to be the best answer.
+
+I looked over LeetCode's solution yesterday before having to go to bed. It is now the next day. I will now try to blindly recreate their clever hash-table-based map creation scheme, which confirmed my suspicions that the solution I'd thought of was highly suboptimal.
+
+Many hours later, my algorithm has turned out to be unworkable - see the comment at the top of robot_cleaner_v1.py for a description of its fundamental flaw, which can't be fixed without replacing almost the entire algorithm. Time to consult LeetCode's solution again.
+
+-----
+
+Notes from LeetCode's solution:
+
+Their algorithm's pseudocode, which they provide before the full solution, goes like this -
+backtrack(cell = (0,0), direction = 0)  # Agh, the key is right here in the first line. The trick to remembering the previous cell is to pass it into the backtracking function.
+    -Mark the cell as visited and clean it up.  # This differs from my algorithm, which marked cells as visited just before the robot entered them.
+    -Explore 4 directions: up, right, down, and left (the order is important, since the idea is always to turn right):  # My algorithm agrees, except that it always turns left instead of right, which is equally correct.
+        -Check the next cell in the chosen direction:  # This doesn't make sense? It's impossible to check a cell without visiting it. Maybe this line's wording is flawed.
+            -If it's not visited yet and there are no obstacles:  # My algorithm has different logic: it tries moving to determine whether there are obstacles. See previous comment.
+                -Move forward.
+                -Explore next cells: backtrack(new_cell, new_direction).
+                -Backtrack, i.e. go back to the previous cell.
+            -Turn right because now there is an obstacle (or a virtual obstacle) just in front.  # Again, my algorithm turns left instead of right.
+
+OK. That should be enough - I still haven't taken another look at their actual code, just the above pseudocode. Armed with this and only this, let's take a shot at v2. I know the basic trick - pass the previous cell into the backtracking function - and now I will close this file so I can't reference their pseudocode as I write v2.
+
+-----
+
+Note that my comments in robot_cleaner_v1.py frequently reference LeetCode's backtracking algorithm template, which I found useful for organizing my thoughts. Here it is:
+
+def backtrack(candidate):
+    if find_solution(candidate):
+        output(candidate)
+        return
+
+    # iterate all possible candidates.
+    for next_candidate in list_of_candidates:
+        if is_valid(next_candidate):
+            # try this partial candidate solution
+            place(next_candidate)
+            # given the candidate, explore further.
+            backtrack(next_candidate)
+            # backtrack
+            remove(next_candidate)
+
+-----
+
+Provided starter code:
+
+# """
+# This is the robot's control interface.
+# You should not implement it, or speculate about its implementation
+# """
+#class Robot:
+#    def move(self):
+#        """
+#        Returns true if the cell in front is open and robot moves into the cell.
+#        Returns false if the cell in front is blocked and robot stays in the current cell.
+#        :rtype bool
+#        """
+#
+#    def turnLeft(self):
+#        """
+#        Robot will stay in the same cell after calling turnLeft/turnRight.
+#        Each turn will be 90 degrees.
+#        :rtype void
+#        """
+#
+#    def turnRight(self):
+#        """
+#        Robot will stay in the same cell after calling turnLeft/turnRight.
+#        Each turn will be 90 degrees.
+#        :rtype void
+#        """
+#
+#    def clean(self):
+#        """
+#        Clean the current cell.
+#        :rtype void
+#        """
+
+class Solution:
+    def cleanRoom(self, robot):
+        """
+        :type robot: Robot
+        :rtype: None
+        """
