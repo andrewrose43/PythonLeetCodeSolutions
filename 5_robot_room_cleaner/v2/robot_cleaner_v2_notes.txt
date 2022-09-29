@@ -7,7 +7,6 @@ Now to look at LeetCode's undoubtedly-far-superior solution and figure out how t
 Notes from LeetCode's solution:
 
 Improvements compared to my code:
--TODO add a note about me using tuples instead of lists?
 -The LeetCode solution avoids having to write and call my _my_right() and _my_left() functions, as well as some associated assignments to the "direction" variable. They do this by tracking a "new_d" variable which tracks the robot's direction relative to the direction passed to the backtrack function.
 
 Neutral/tradeoff-involving differences compared to my code:
