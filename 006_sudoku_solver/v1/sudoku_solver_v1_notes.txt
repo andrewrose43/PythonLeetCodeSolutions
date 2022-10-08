@@ -1,0 +1,16 @@
+Notes from comparison to the LeetCode solution:
+
+-My solution does a lot of redundant work assembling all those instances of invalid_set. LeetCode's notion of preserving a set for each row, column, and box, thereby avoiding assembly of invalid_set every time a number is attempted to be placed, is obviously faster, though it does require more memory. But because of the small size of a sudoku board, this increased memory requirement is insignificant, so LeetCode's solution is clearly better.
+-LeetCode uses a different mechanism for indexing the boxes. Mine and theirs work equally well. For v2, I'll use my original version; I might try LeetCode's in v3.
+
+-----
+
+Provided starter code, with a necessary import added for use outside the LeetCode ecosystem:
+
+from typing import List
+class Solution:
+    def solveSudoku(self, board: List[List[str]]) -> None:
+
+
+
+

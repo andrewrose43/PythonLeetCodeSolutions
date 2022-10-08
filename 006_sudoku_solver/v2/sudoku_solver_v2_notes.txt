@@ -1,0 +1,17 @@
+For v2, I implemented the big improvement noted in v1.
+
+-----
+
+Differences between v2 and the LeetCode solution:
+-I find their handling of the dimensions of the board to be unnecessarily complex, and my for-each loops are faster than their for-in-range loops.
+-My solution is more concise in a few places.
+-Why on Earth does LeetCode use defaultdicts for the sets of numbers which are already present in rows, columns, and boxes? Very strange. Sets, like I use in my solution, are obviously the better and more efficient tool for the job.
+-LeetCode's solution unnecessarily clears numbers on the board, whereas my solution doesn't bother clearing numbers that are about to be replaced by others.
+-My solution avoids calls to a "box_index" function.
+    -With the change in architecture from v1, the avoidance of this call becomes a genuine advantage. Merely accessing list indices is less expensive than LeetCode's lambda function.
+
+With that one big improvement over v1 done, I'm surprised at just how much better v2 is than the LeetCode solution. Sloppy work on their part.
+
+-----
+
+LeetCode user ShaneTsui pointed out an obvious truth: the sets of invalid digits are unnecessary. The board itself can easily be used in their place. And since the size of the board is fixed, access times are O(1). v3 shall use this idea to improve upon v2.

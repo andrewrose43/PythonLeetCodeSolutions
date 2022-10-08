@@ -1,0 +1,3 @@
+This solution ran much slower than v2, which makes sense in hindsight - instead of simply checking membership of a set, v3 uses a mess of zip() calls and list comprehensions to validate each and every attempt to place a digit. So, as clever as this solution is, v2's set-based implementation remains best.
+
+I'll write v2 once more for practice, but this is the last iteration I'll upload to GitHub.
