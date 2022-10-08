@@ -1,0 +1,3 @@
+This final version declares tuple_1_9_s, rows_digits, and company as tuples, not lists. Other than that, it's almost entirely identical to v2.
+
+This is better code because tuples are faster and immutable. (The sets inside rows_digits, cols_digits, and boxes_digits are, of course, mutable - just not the tuples which contain them.)

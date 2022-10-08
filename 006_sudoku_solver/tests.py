@@ -2,12 +2,13 @@ from unittest import TestCase
 from v1.sudoku_solver_v1 import Solution as v1
 from v2.sudoku_solver_v2 import Solution as v2
 from v3.sudoku_solver_v3 import Solution as v3
+from v4.sudoku_solver_v4 import Solution as v4
 
 
 class SudokuSolverTests(TestCase):
 
     def setUp(self):
-        self.s = v3()  # Edit this line to test any version
+        self.s = v4()  # Edit this line to test any version
 
     def test_1(self):
         board =\
