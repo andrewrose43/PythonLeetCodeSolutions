@@ -1,0 +1,9 @@
+Wow. This solution is beautifully elegant.
+
+Differences between my version and LeetCode's:
+-I used list() instead of LeetCode's [:] to make a new list from each candidate. Some experimentation with timeit confirms an unsurprising truth: [:] is faster than list() due to the overhead involved in calling a function instead of stating a literal. I'll remember this for the future. (After writing this, I made the replacement in combinations_v2.py. Wouldn't want my final version of this algorithm to display an obvious flaw to anyone who didn't read this .txt.)
+-Some insignificant syntactic differences.
+
+I rewrote this once more for practice, including the [:] improvement, but it would have been silly to create a whole new version file for such a small tweak. For v3, I'll take a look at LeetCode's other solution, which uses a totally different algorithm, and try to recreate it blind.
+
+

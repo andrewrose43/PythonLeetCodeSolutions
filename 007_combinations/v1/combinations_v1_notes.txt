@@ -1,0 +1,20 @@
+I'm quite happy with this solution; this may be my best first solution so far. Now let's see how it compares to LeetCode's solution...
+
+-----
+
+Notes from comparison to LeetCode's solution:
+
+-My solution takes a slightly different approach. It never pops anything from the combinations when backtracking - it creates a new list for each branch. This is less space-efficient and much less time-efficient than LeetCode's solution, even though it doesn't alter the orders of time and space complexity.
+    -This different architecture also enables LeetCode's solution to avoid my multiple initial _backtrack() calls.
+-One slight improvement: there's no need to pass my "k_minus" parameter to each recursive call. Just check when the combination's length is equal to k.
+
+v2 will improve in the above two areas, essentially becoming LeetCode's solution.
+
+-----
+
+Provided starter code (with an import added for use outside LeetCode):
+
+from typing import List
+
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:

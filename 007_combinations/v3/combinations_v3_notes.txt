@@ -1,0 +1,7 @@
+LeetCode's explanation of this amazing solution was terrible. Allow me to try to explain it better.
+
+A picture is worth a thousand words, they say, and trying to describe this in words was an exercise in frustration. Accordingly, I've included an image in this folder showing the algorithm at work. The image, combined with the code and my comments in it, should make it easy to understand.
+
+In the image, each numbered step represents an iteration of the outer while loop. I've represented each number in the combination as a vertical bar, with its height equal to its value. I hope this visual aid is helpful.
+
+This solution is functionally identical to LeetCode's. To make the code faster, I debated replacing the outer while loop with a for-in-range loop, but the time spent calculating the size of the loop (nCk) would likely defeat the purpose of switching loop types. I'll rewrite this solution once more outside this repository for practice, then move on.
