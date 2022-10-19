@@ -1,0 +1,9 @@
+Removing the valid() function call didn't help significantly. Running performance_test.py several times, v3 displays little to no improvement, sometimes running faster than v2 and sometimes running slower.
+
+That leaves two potential culprits for v2 and v3's inferior performance:
+    -the expense of interacting with a deque
+    -the expense of running a while loop (Python's slowest loop)
+
+Neither of those two potential culprits can be discarded without wrecking the algorithm, so - assuming that Python's collections library is written efficiently enough that any deque clone I could write wouldn't fare meaningfully better - this seems to be as fast as an iterative solution can get. Meanwhile, the pop and append methods of a regular list are O(n) whereas a deque's pop and append methods are O(1), so replacing the deques with regular lists would actually make this slower.
+
+The recursive solution is, therefore, faster in all cases.

@@ -1,0 +1,17 @@
+
+This (quite easy) problem was used as an example in LeetCode's Recursion II course, so I learned about it that way before tackling it here. I'll quickly write up a pair of solutions, compare their runtimes, and move on.
+
+This is a recursive solution. v2 will be iterative.
+
+-----
+
+Provided sample code:
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
